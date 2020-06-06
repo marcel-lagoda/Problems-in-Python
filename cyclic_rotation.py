@@ -48,7 +48,19 @@ def solution_2(A, K=2):
     return A[len(A) - K: len(A)] + A[0: len(A) - K]
 
 
+def solution_3(A, K=2):
+    old = A
+    new = [0] * len(A)
+
+    for i in range(K):
+        new[0] = old[-1]
+        new[1:] = old[:-1]
+        old = new[:]
+    return new
+
+
 A = [3, 8, 9, 7, 6]
 
 print(solution(A))
 print(solution_2(A))
+print(solution_3(A))
