@@ -39,6 +39,14 @@ def solution(A):
     return odd
 
 
+# [3 ^ 9 ^ 3 ^ 9 ^ 3 ^ 2 ^ 3] = 7
+# [9 ^ 9 ^ 3 ^ 3 ^ 3 ^ 3 ^ 2] = 7
+
+
+# .count() niewydajna przy dużych liczbach,
+# bo count tworzy tablicę z hashem
+
+
 def solution_1(A):
     for num in A:
         if A.count(num) % 2:
@@ -53,6 +61,9 @@ def solution_3(A):
     return [num for num in set(A) if A.count(num) % 2 != 0][0]
 
 
+#  ------------------------------------------------------------
+
+
 def solution_4(A):
     for i in range(len(A)):
         counter = 0
@@ -65,24 +76,27 @@ def solution_4(A):
     return -1
 
 
-def solution_5(A):
-    A.sort()
-    N = len(A)
-    counter = 0
-    while counter < N:
-        try:
-            if A[i] == A[i + 1]:
-                counter += 2
-            else:
-                return A[i]
-        except:
-            return A[-1]
+# solution incorrect
+# although it might return correct answer when odd is max
+#
+# def solution_5(A):
+#     A.sort()
+#     N = len(A)
+#     counter = 0
+#     while counter < N:
+#         try:
+#             if A[i] == A[i + 1]:
+#                 counter += 2
+#             else:
+#                 return A[i]
+#         except:
+#             return A[-1]
 
 
-A = [3, 9, 3, 9, 3, 11, 3]
+A = [3, 9, 3, 9, 3, 1, 3]
 print(solution_1(A))
 print(solution_2(A))
 print(solution_3(A))
 print(solution_4(A))
-print(solution_5(A))
+# print("x", solution_5(A))
 print(solution(A))
