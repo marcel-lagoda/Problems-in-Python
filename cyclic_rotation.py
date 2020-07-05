@@ -37,7 +37,7 @@
 # The performance of your solution will not be the focus of the assessment.
 
 
-def solution(A, K=2):
+def solution(A, K=7):
     if len(A) == 0:
         return A
     K %= len(A)
@@ -59,8 +59,25 @@ def solution_3(A, K=2):
     return new
 
 
+def solution_4(A, K):
+    if len(A) == 0:
+        return A
+    
+    result = [None] * len(A)
+    
+    for i in range(len(A)):
+        result[(i + K) % len(A)] = A[i]
+        
+    return result
+
 A = [3, 8, 9, 7, 6]
+
+# --------------------------
+
+print(A)
+print('--------------------------')
 
 print(solution(A))
 print(solution_2(A))
 print(solution_3(A))
+print(solution_4(A, 2))
