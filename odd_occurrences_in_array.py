@@ -32,10 +32,11 @@
 # all but one of the values in A occur an even number of times.
 
 
+# only for one odd number in the array
 def solution(A):
     odd = 0
     for i in A:
-        odd ^= i
+        odd = odd ^ i
     return odd
 
 
@@ -94,9 +95,9 @@ def solution_4(A):
 
 
 A = [3, 9, 3, 9, 3, 1, 3]
-print(solution_1(A))
-print(solution_2(A))
-print(solution_3(A))
-print(solution_4(A))
+print('sol_1:', solution_1(A))
+print('sol_2:', solution_2(A))
+print('sol_3:', solution_3(A))
+print('sol_4:', solution_4(A))
 # print("x", solution_5(A))
-print(solution(A))
+print('sol:',solution(A))
