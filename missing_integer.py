@@ -15,12 +15,13 @@
 # each element of array A is an integer within the range [−1,000,000..1,000,000].
 
 A = [1, 3, 6, 4, 1, 2]
+B = [-1, -3, -4]
 
 def solution(A):
     return min(set(range(1, len(A) + 1)).difference(set(A)))
 
 def solution2(A):
-    return set(range(1, len(A))).difference(set(A))
+    return set(range(1, len(A) + 1)).difference(set(A))
 
 
 def solution3(A):
@@ -28,6 +29,7 @@ def solution3(A):
     
     for i in A:
         if 1 <= i <= len(A)+1:
+            print(occur[i - 1])
             occur[i - 1] = True
             
     for i in range(len(A) + 1):
@@ -39,8 +41,8 @@ def solution3(A):
     
     
     
-    
 # ---------------
 print(solution(A))
+print(solution(B))
 print(solution2(A))
 print(solution3(A))
