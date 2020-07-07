@@ -24,7 +24,7 @@
 
 
 A = [1, 2, 3, 5, 6, 7, 8]
-
+B = [3, 2, 1, 8, 7, 6, 5]
 
 def solution(A):
     length = len(A)
@@ -39,6 +39,7 @@ def solution(A):
 
 
 def solution_2(A):
+    A.sort()
     xor = 0
     xor_2 = 0
 
@@ -62,6 +63,7 @@ def solution_2(A):
 
 
 def solution_sum_formula(A):
+    A.sort()
     sum_a = sum(A)
     n = A[-1]
     return (n * (n + 1) // 2) - sum_a
@@ -69,4 +71,6 @@ def solution_sum_formula(A):
 
 print(solution(A))
 print(solution_2(A))
+print(solution_2(B))
 print(solution_sum_formula(A))
+print(solution_sum_formula(B))
