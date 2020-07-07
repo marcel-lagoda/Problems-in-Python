@@ -26,6 +26,9 @@
 A = [1, 2, 3, 5, 6, 7, 8]
 B = [3, 2, 1, 8, 7, 6, 5]
 
+
+# XOR(1)
+
 def solution(A):
     length = len(A)
     xor_sum = 0
@@ -36,6 +39,7 @@ def solution(A):
 
 # 1. Xor all array elements.
 # 2. Xor the whole range (1, n + 1)
+
 
 
 def solution_2(A):
@@ -69,8 +73,19 @@ def solution_sum_formula(A):
     return (n * (n + 1) // 2) - sum_a
 
 
+# SET DIFFERENCE METHOD
+# WORKS BUT NOT THE MOST OPTIMAL SOLUTION
+
+def solution_4(A):
+    return min(set(range(1, len(A) + 1)).difference(set(A)))
+
+
+# ---------------------------
+
 print(solution(A))
 print(solution_2(A))
 print(solution_2(B))
 print(solution_sum_formula(A))
 print(solution_sum_formula(B))
+print(solution_4(A))
+print(solution_4(B))
