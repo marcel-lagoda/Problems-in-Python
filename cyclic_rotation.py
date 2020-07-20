@@ -62,13 +62,14 @@ def solution_3(A, K=2):
 def solution_4(A, K):
     if len(A) == 0:
         return A
-    
+
     result = [None] * len(A)
-    
+
     for i in range(len(A)):
         result[(i + K) % len(A)] = A[i]
-        
+
     return result
+
 
 A = [3, 8, 9, 7, 6]
 
