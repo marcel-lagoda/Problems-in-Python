@@ -232,3 +232,5 @@ tags
 # End of https://www.gitignore.io/api/vim,python,pycharm+all,visualstudiocode
 
 tests.py
+quest_notes.py
+notes.py
