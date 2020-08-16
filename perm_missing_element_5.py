@@ -40,20 +40,19 @@ def solution(A):
 # 1. Xor all array elements.
 # 2. Xor the whole range (1, n + 1)
 
-
-
-def solution_2(A):
-    A.sort()
-    xor = 0
-    xor_2 = 0
-
-    for i in A:
-        xor ^= i
-        for j in range(1, A[-1] + 1):
-            xor_2 ^= j
-    sum_xor = xor ^ xor_2
-    return sum_xor
-
+#
+# def solution_2(A):
+#     A.sort()
+#     xor = 0
+#     xor_2 = 0
+#
+#     for i in A:
+#         xor ^= i
+#         for j in range(1, A[-1] + 1):
+#             xor_2 ^= j
+#     sum_xor = xor_2 ^ xor
+#     return sum_xor
+#
 
 # SUM FORMULA
 
@@ -67,9 +66,11 @@ def solution_2(A):
 
 
 def solution_sum_formula(A):
-    A.sort()
+    #    A.sort()
     sum_a = sum(A)
-    n = A[-1]
+    #  n = A[-1]   nie mogę dać n jako ostatniego elementu, bo zwróci błąd dla A[]
+    # jeśli usunę A[-1] to mogę też skasować A.sort()
+    n = len(A) + 1
     return (n * (n + 1) // 2) - sum_a
 
 
@@ -85,7 +86,12 @@ def solution_4(A):
 print(solution(A))
 print(solution_2(A))
 print(solution_2(B))
+print('--------sum_formula-----------')
 print(solution_sum_formula(A))
 print(solution_sum_formula(B))
+print(solution_sum_formula([1, 2, 3, 5]))
+print(solution_sum_formula([1, 2, 3, 4, 5, 6, 7, 8]))
+print(solution_sum_formula([]))
+print('-------------------------------')
 print(solution_4(A))
 print(solution_4(B))

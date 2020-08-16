@@ -11,7 +11,10 @@
 # measured in seconds.
 # The goal is to find the earliest time when
 # the frog can jump to the other side of the river.
-# The frog can cross only when leaves appear at every position across the river from 1 to X (that is, we want to find the earliest moment when all the positions from 1 to X are covered by leaves). You may assume that the speed of the current in the river is negligibly small, i.e. the leaves do not change their positions once they fall in the river.
+# The frog can cross only when leaves appear at every position across the river from 1 to X
+# (that is, we want to find the earliest moment when all the positions from 1 to X are covered by leaves).
+# You may assume that the speed of the current in the river is negligibly small, i.e.
+# the leaves do not change their positions once they fall in the river.
 # 
 # For example, you are given integer X = 5 and array A such that:
 # 
@@ -35,16 +38,15 @@
 A = [1, 3, 1, 4, 2, 3, 5, 4]
 X = 5
 
+
 def solution(A, X):
     leaves = set()
-    
+
     for i, j in enumerate(A):
         leaves.add(j)
         if len(leaves) == X:
             return i
     return -1
-
-
 
 
 # ---------------------
