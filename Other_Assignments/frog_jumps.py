@@ -7,9 +7,23 @@
 
 
 def solution(X, Y, D):
+    """
+    Calculate count of moves.
+
+    :param X:
+        starting point, int
+    :param Y:
+        end point, int
+    :param D:
+        distance, int
+    :return:
+        required number of moves, int
+    """
+
     distance = Y - X
     if distance % D == 0:
         return distance // D
     return distance // D + 1
+
 
 print(solution(10, 85, 30))
