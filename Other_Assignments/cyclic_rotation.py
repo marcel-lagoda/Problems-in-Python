@@ -38,6 +38,13 @@
 
 
 def solution(A, K=7):
+    """
+    Return rotated array.
+
+    :param A: an array of integers
+    :param K: rotation value
+    :return: a rotated array
+    """
     if len(A) == 0:
         return A
     K %= len(A)
@@ -73,8 +80,7 @@ def solution_4(A, K):
 
 A = [3, 8, 9, 7, 6]
 
-# --------------------------
-
+print('--------------------------')
 print(A)
 print('--------------------------')
 
