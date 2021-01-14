@@ -27,6 +27,12 @@
 
 
 def solution(N):
+    """
+    Convert a positive integer into a binary.
+    Count all '0' placed between 1.
+    :param N: positive int
+    :return: size of binary gap
+    """
     # binary = '{0:b}'.format(N)
     binary = bin(N)[2:]
     maxi = max(binary.strip('0').split('1'))
@@ -34,6 +40,12 @@ def solution(N):
 
 
 def solution2(N):
+    """
+    Convert a positive integer into a binary.
+    Count all '0' placed between 1.
+    :param N: positive int
+    :return: size of binary gap
+    """
     return len(max(format(N, 'b').strip('0').split('1')))
 
 
